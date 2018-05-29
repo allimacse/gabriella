@@ -1,4 +1,5 @@
 <?php  
+session_start();
 
 $cons_usuario="alan";
 $cons_contra="alan1234";
@@ -36,13 +37,15 @@ $var_resultado = $obj_conexion->query($var_consulta);
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+  <link rel="stylesheet" type="text/css" href="css/aerolinea.css">
+
 
 
 
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="../index.html">Sistema de Gestion de Vuelos</a>
+        <a class="navbar-brand" href="index.html">Sistema de Gestion de Vuelos</a>
       </div>
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Vuelos</a></li>
@@ -161,11 +164,13 @@ $var_resultado = $obj_conexion->query($var_consulta);
               <td>".$row["llegada"]."</td>
               <td>".$row["destino"]."</td>
               <td>".$row["boletos"]."</td>
-              <td><button>Disponible</button></td>
+              <td><form action='./boletos.php' name='singup' method='post'><button type= 'submit' name='vuelo' value=".$row["Id_vuelo"].">Disponible</button></form></td>
+
               </tr>
+
               ");
           }
-
+          
           ?>
         </tbody>
       </table>

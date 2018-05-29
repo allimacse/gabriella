@@ -13,7 +13,7 @@ session_start();
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-  <link rel="stylesheet" type="text/css" href="../css/aerolinea.css">
+  <link rel="stylesheet" type="text/css" href="css/aerolinea.css">
 
 
 
@@ -21,10 +21,9 @@ session_start();
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">Sistema de Gestion de Vuelos</a>
+        <a class="navbar-brand" href="index_user.php">Sistema de Gestion de Vuelos</a>
       </div>
       <ul class="nav navbar-nav">
-        <li><a href="../index_user.php">Inicio</a></li>
         <li><a href="vuelos_user.php">Vuelos</a></li>
         <li class="active"><a href="#">Contacto</a></li>
       </ul>
@@ -36,7 +35,7 @@ session_start();
   </nav> 
 
 <div id="my_perfil" class="modal" >
-   <form class="modal-content animate" action="./logout.php" name="perfil" method="post">
+   <form class="modal-content animate" action="logout.php" name="perfil" method="post">
     <div class="imgcontainer">
       <span class="close" title="Close Modal" data-dismiss="modal">&times;</span>
       <img src="images/images.png" alt="Avatar" class="avatar" style="max-width: 100%;">
@@ -57,7 +56,7 @@ session_start();
     <div class="card">
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
-        <img src="../images/gabo.jpg" alt="photo_gabo" style="max-width: all;">
+        <img src="images/gabo.jpg" alt="photo_gabo" style="max-width: all;">
         <div class="caption">
           <h3>Thumbnail label</h3>
           <p>...</p>
@@ -68,7 +67,7 @@ session_start();
   <div class="card">
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
-        <img src="../images/alan.jpg" alt="photo_alan" style="max-width: all;">
+        <img src=".images/alan.jpg" alt="photo_alan" style="max-width: all;">
         <div class="caption">
           <h3>Thumbnail label</h3>
           <p>...</p>
@@ -79,7 +78,7 @@ session_start();
   <div class="card">
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
-        <img src="../images/gloria.jpg" alt="photo_gloria" style="max-width: all;">
+        <img src=".images/gloria.jpg" alt="photo_gloria" style="max-width: all;">
         <div class="caption">
           <h3>Thumbnail label</h3>
           <p>...</p>

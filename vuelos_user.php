@@ -36,16 +36,18 @@ $var_resultado = $obj_conexion->query($var_consulta);
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+    <link rel="stylesheet" href="css/aerolinea.css" type="text/css" media="all" />
+
+
 
 
 
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">Sistema de Gestion de Vuelos</a>
+        <a class="navbar-brand" href="index_user.php">Sistema de Gestion de Vuelos</a>
       </div>
       <ul class="nav navbar-nav">
-        <li><a href="../index_user.php">Inicio</a></li>
         <li class="active"><a href="#">Vuelos</a></li>
         <li><a href="contacto_user.php">Contacto</a></li>
       </ul>
@@ -57,7 +59,7 @@ $var_resultado = $obj_conexion->query($var_consulta);
   </nav> 
 
 <div id="my_perfil" class="modal" >
-   <form class="modal-content animate" action="./logout.php" name="perfil" method="post">
+   <form class="modal-content animate" action="logout.php" name="perfil" method="post">
     <div class="imgcontainer">
       <span class="close" title="Close Modal" data-dismiss="modal">&times;</span>
       <img src="images/images.png" alt="Avatar" class="avatar" style="max-width: 100%;">
@@ -88,10 +90,12 @@ $var_resultado = $obj_conexion->query($var_consulta);
             <th>Llegada</th>
             <th>Destino</th>
             <th>Boletos</th>
+            <th>Comprar</th>
           </tr>
         </thead>
         <tbody>
           <?php 
+
           while ($row = mysqli_fetch_array($var_resultado)) {
             print("
               <tr>
@@ -102,6 +106,7 @@ $var_resultado = $obj_conexion->query($var_consulta);
               <td>".$row["llegada"]."</td>
               <td>".$row["destino"]."</td>
               <td>".$row["boletos"]."</td>
+              <td><button>Disponible</button></td>
               </tr>
               ");
           }

@@ -16,7 +16,7 @@ session_start();
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-  <link rel="stylesheet" href="./css/aerolinea.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="css/aerolinea.css" type="text/css" media="all" />
 
 
   <nav class="navbar navbar-inverse">
@@ -25,8 +25,8 @@ session_start();
         <a class="navbar-brand" href="#">Sistema de Gestion de Vuelos</a>
       </div>
       <ul class="nav navbar-nav">        
-        <li><a href="src/vuelos_user.php">Vuelos</a></li>
-        <li><a href="src/contacto_user.php">Contacto</a></li>
+        <li><a href="vuelos_user.php">Vuelos</a></li>
+        <li><a href="contacto_user.php">Contacto</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#" data-toggle="modal" data-target="#my_perfil"><span class="glyphicon glyphicon-user"></span>
@@ -36,7 +36,7 @@ session_start();
   </nav> 
 
 <div id="my_perfil" class="modal" >
-   <form class="modal-content animate" action="./logout.php" name="perfil" method="post">
+   <form class="modal-content animate" action="logout.php" name="perfil" method="post">
     <div class="imgcontainer">
       <span class="close" title="Close Modal" data-dismiss="modal">&times;</span>
       <img src="images/images.png" alt="Avatar" class="avatar" style="max-width: 100%;">
