@@ -1,3 +1,30 @@
+<?php  
+
+$cons_usuario="alan";
+$cons_contra="alan1234";
+$cons_base_datos="sistemagestionvuelos";
+$cons_equipo="127.0.0.1";
+
+$obj_conexion = mysqli_connect($cons_equipo,$cons_usuario,$cons_contra,$cons_base_datos);
+if(!$obj_conexion)
+{
+  echo "<h3>No se ha podido conectar PHP - MySQL, verifique sus datos.</h3><hr><br>";
+}
+else
+{
+  //echo "<h3>Conexion Exitosa PHP - MySQL</h3><hr><br>";
+}
+
+/* ejemplo de una consulta */
+
+$var_consulta= "select * from vuelos;";
+$var_resultado = $obj_conexion->query($var_consulta);
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,17 +36,17 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-  <link rel="stylesheet" href="./css/aerolinea.css" type="text/css" media="all" />
+
 
 
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">Sistema de Gestion de Vuelos</a>
+        <a class="navbar-brand" href="../index.html">Sistema de Gestion de Vuelos</a>
       </div>
-      <ul class="nav navbar-nav">        
-        <li><a href="src/vuelos.php">Vuelos</a></li>
-        <li><a href="src/contacto.html">Contacto</a></li>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Vuelos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#" data-toggle="modal" data-target="#my_signup"><span class="glyphicon glyphicon-user"></span> Registrar</a></li>
@@ -29,7 +56,7 @@
   </nav> 
 
   <div id="my_signup" class="modal fade" role="dialog">
-    <form class="modal-content" action="./singup.php" name="singup" method="post">
+    <form class="modal-content" action="../singup.php" name="singup" method="post">
       <div class="container">
         <span class="close" title="Close Modal" data-dismiss="modal">&times;</span>
       </div>
@@ -64,7 +91,7 @@
           <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
         </label>
 
-        <p>By creating an account you agree to our <a href="src/export.pdf" style="color:dodgerblue">Terms & Privacy</a>.</p>
+        <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
         <div class="clearfix">
           <button type="button" data-dismiss="modal" class="cancelbtn">Cancel</button>
@@ -102,47 +129,47 @@
 </div>
 
 
-
-
 </head>
-
 <body>
-  <div id="myCarousel" class="carousel slide" data-ride="carousel" align="center">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="item active">
-        <img src="images/avion.jpg" alt="Los Angeles">
-      </div>
-
-      <div class="item">
-        <img src="images/avion.jpg" alt="Chicago">
-      </div>
-
-      <div class="item">
-        <img src="images/avion.jpg" alt="New York">
-      </div>
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
 
   <div class="container">
-    <!-- Page Content goes here -->
+    <h2>Vuelos</h2>                                                                                      
+    <div class="table-responsive">          
+      <table class="table">
+        <thead style="background-color:gray; ">
+          <tr>
+            <th>ID vuelo</th>
+            <th>Aerolinea</th>
+            <th>Origen</th>
+            <th>Salida</th>
+            <th>Llegada</th>
+            <th>Destino</th>
+            <th>Boletos</th>
+            <th>Comprar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php 
+
+          while ($row = mysqli_fetch_array($var_resultado)) {
+            print("
+              <tr>
+              <td>".$row["Id_vuelo"]."</td>
+              <td>".$row["aerolinea"]."</td>
+              <td>".$row["origen"]."</td>
+              <td>".$row["salida"]."</td>
+              <td>".$row["llegada"]."</td>
+              <td>".$row["destino"]."</td>
+              <td>".$row["boletos"]."</td>
+              <td><button>Disponible</button></td>
+              </tr>
+              ");
+          }
+
+          ?>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <!-- jQuery library -->
@@ -150,6 +177,4 @@
 
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-
 </body>
-</html>

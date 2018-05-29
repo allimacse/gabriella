@@ -50,19 +50,33 @@ $var_resultado = $obj_conexion->query($var_consulta);
         <li><a href="contacto_user.php">Contacto</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#my_perfil"><span class="glyphicon glyphicon-user"></span>
+          <?php  echo $_SESSION["name"]; ?></a></li>
       </ul>
     </div>
   </nav> 
+
+<div id="my_perfil" class="modal" >
+   <form class="modal-content animate" action="./logout.php" name="perfil" method="post">
+    <div class="imgcontainer">
+      <span class="close" title="Close Modal" data-dismiss="modal">&times;</span>
+      <img src="images/images.png" alt="Avatar" class="avatar" style="max-width: 100%;">
+    </div>
+
+
+    <div class="container" style="background-color:#f1f1f1;">
+      <button type="button" name="perfil" >Perfil</button>
+      <button type="submit" class="cancelbtn">Salir</button>
+    </div>
+  </form>
+</div>
 
 
 </head>
 <body>
 
   <div class="container">
-    <h2>Table</h2>
-    <p>The .table-responsive class creates a responsive table which will scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, there is no difference:</p>                                                                                      
+    <h2>Vuelos</h2>                                                                                      
     <div class="table-responsive">          
       <table class="table">
         <thead style="background-color:gray; ">

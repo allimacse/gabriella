@@ -1,6 +1,8 @@
 <?php  
 session_start();
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -92,7 +94,6 @@ session_start();
     <!-- Page Content goes here -->
   </div>
 
-  <button>Alan</button>
   <!-- jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
